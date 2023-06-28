@@ -1,38 +1,69 @@
+document.addEventListener('DOMContentLoaded', () => {
 
-document.addEventListener('DOMContentLoaded', function () {
 
-    // By default the submit button is disabled
-    document.querySelector('#submit').disabled = true;
 
-    // Activate the submit button when the onkeyup event happens
-    document.querySelector('#task').onkeyup = () => {
-        if (document.querySelector('#task').value.length > 0) {
-            document.querySelector('#submit').disabled = false;
+    const form =document.querySelector('#new-task-form');
+    const input = document.querySelector('#new-task-input');
+    const list_el = document.querySelector('#tasks');
+    const submit_btn = document.querySelector('#new-task-submit');
+    
+    //By defauld the submit button is disabled
+    submit_btn.disabled = true;
+    document.querySelector('#new-task-input').onkeyup = () => {
+        if (document.querySelector('#new-task-input').value.length > 0) {
+            submit_btn.disabled = false;
         } else {
-            document.querySelector('#submit').disabled = true;
+            submit_btn.disabled = true;
+        };
+    };
+
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Write alerm for the users when they submit an empty form of tasks
+        const task = input.value;
+        if (!task) {
+            alert(" Please fill out the task!");
+
+            return;
         }
-    }
 
-    // Take input from the user and add the task to the list of tasks
-    document.querySelector('form').onsubmit = function () {
+        // Create Variables
+        const task_el = document.createElement('div');
+        task_el.classList.add('task');
+        list_el.appendChild(task_el);
 
-        // Create the variables
-        const task = document.querySelector('#task').value;
+        const task_content_el = document.createElement('div');
+        task_content_el.classList.add('content');
+        task_el.appendChild(task_content_el);
 
-        // Create elements
-        const li = document.createElement('li');
-        li.innerHTML = task;
+        const task_input_el = document.createElement('input');
+        task_input_el.classList.add('text');
+        task_input_el.type = "text";
+        task_input_el.value = task;
+        task_input_el.setAttribute("readonly", "redonly");
+        task_content_el.appendChild(task_input_el);
 
-        // Add the new element to the list of tasks
-        document.querySelector('#tasks').append(li);
+        const task_actions_el = document.createElement('div');
+        task_actions_el.classList.add('actions');
+        task_el.appendChild(task_actions_el);
+
+        const task_edit_el = document.createElement('button');
+        task_edit_el.classList.add('edit');
+        task_edit_el.innerHTML = "Edit";
+        task_actions_el.appendChild(task_edit_el);
+
+        const task_delete_el = document.createElement('button');
+        task_delete_el.classList.add('delete');
+        task_delete_el.innerHTML = "Delete"
+        task_actions_el.appendChild(task_delete_el);
 
         // Clear out the input field
-        document.querySelector('#task').value = '';
+        input.value = "";
 
         // Disable the submit button
-        document.querySelector('#submit').disabled = true;
+        submit_btn.disabled = true;
+    });
 
-        // Stop the form from submitting
-        return false;
-    };
 });

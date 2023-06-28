@@ -1,9 +1,130 @@
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
 }
 
-#tasks {
-    overflow-y: scroll;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    max-width: 800px;
+    width: 100%;
+    padding: 1rem 1rem 1rem 1rem;
+    margin-bottom: 1rem;
+    margin: 0 auto;
+
+}
+
+header h1 {
+    margin-bottom: 1rem;
+}
+
+header form {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+#new-task-input {
+    flex: 1 1 0%;
+}
+
+#new-task-submit {
+    cursor: pointer;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+#new-task-submit:hover {
+    opacity: 0.8;
+}
+
+#new-task-submit:active {
+    opacity: 0.6;
+    background-color: green;
+}
+
+#new-task-submit:not(:disabled) {
+    background-color: green;
+    color: white;
+    border: 1px solid white;
+    border-radius: 0.115rem;
+    -webkit-border-radius: 0.115rem;
+    -moz-border-radius: 0.115rem;
+    -ms-border-radius: 0.115rem;
+    -o-border-radius: 0.115rem;
+}
+
+main {
+    flex: 1 1 0%;
+    max-width: 800px;
+    width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-list h2 {
+    margin-bottom: 1rem;
+}
+
+#tasks .task {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid rgb(90, 90, 90);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+
+#tasks .task .content {
+    flex: 1 1 0%;
+}
+
+#tasks .task .content .text {
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+#tasks .task .content .text:not(:read-only) {
+    color: green;
+}
+
+#tasks .task .actions {
+    display: flex;
+    gap: 10px;
+}
+
+#tasks .task .actions button {
+    cursor: pointer;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+#tasks .task .actions button:hover {
+    opacity: 0.8;
+}
+
+#tasks .task .actions button:active {
+    opacity: 0.6;
 }
