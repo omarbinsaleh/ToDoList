@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-
+        
         // Write alerm for the users when they submit an empty form of tasks
         const task = input.value;
         if (!task) {
