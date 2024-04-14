@@ -120,7 +120,12 @@ main {
 #tasks .task .content {
     flex: 1 1 0%;
     width: 100%;
-    border: 1px solid blue;
+    border: 1px solid gray;
+    border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    -ms-border-radius: 0.2em;
+    -o-border-radius: 0.2em;
 }
 
 @media only screen and (max-width:500px) {
@@ -137,6 +142,11 @@ main {
     border: none;
     height: fit-content;
     font-size: 1rem;
+    border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    -ms-border-radius: 0.2em;
+    -o-border-radius: 0.2em;
 }
 
 #tasks .task .content .text:not(:read-only) {
