@@ -71,12 +71,13 @@ header form {
 #new-task-submit:active {
     opacity: 0.6;
     background-color: green;
+    border: 1px solid green;
 }
 
 #new-task-submit:not(:disabled) {
     background-color: green;
     color: white;
-    border: 1px solid white;
+    border: 1px solid green;
     border-radius: 0.115rem;
     -webkit-border-radius: 0.115rem;
     -moz-border-radius: 0.115rem;
@@ -108,12 +109,12 @@ main {
     gap: 10px;
     margin-bottom: 1rem;
     border: 1px solid rgb(90, 90, 90);
-    padding: 0.3rem;
-    border-radius: 0.3rem;
-    -webkit-border-radius: 0.3rem;
-    -moz-border-radius: 0.3rem;
-    -ms-border-radius: 0.3rem;
-    -o-border-radius: 0.3rem;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.2rem;
+    -moz-border-radius: 0.2rem;
+    -ms-border-radius: 0.2rem;
+    -o-border-radius: 0.2rem;
 }
 
 #tasks .task .content {
@@ -144,6 +145,7 @@ main {
     border: none;
     height: fit-content;
     font-size: 1rem;
+    padding: 5px;
     border-radius: 0.2em;
     -webkit-border-radius: 0.2em;
     -moz-border-radius: 0.2em;
@@ -157,8 +159,7 @@ main {
 
 /* @media only screen and (max-width:500px) {
     #tasks .task .content .text {
-        max-height: 50px;
-        overflow: auto;
+        font-size: 1.2rem;
     }
 } */
 
